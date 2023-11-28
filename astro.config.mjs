@@ -3,6 +3,10 @@ import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
+  base: "/",
+  trailingSlash: "always",
   output: "hybrid",
-  adapter: vercel()
+  adapter: vercel({
+    functionPerRoute: false,
+  }),
 });
